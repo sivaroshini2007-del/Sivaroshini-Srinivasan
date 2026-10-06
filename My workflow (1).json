@@ -1,0 +1,86 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "cb166ca9-5fb5-4c3e-9dad-2c7b79d90b66",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "sendTo": "pragalyam07@gmail.com",
+        "subject": "hello",
+        "emailType": "text",
+        "message": "who  are you?",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "c0590be7-599d-4199-a071-bee30352bd64",
+      "name": "Send a message",
+      "webhookId": "d5b24410-371b-4fb4-bb5a-23eb06ad4090",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "zAPcD8ujTD5VUldw",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 16
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        144,
+        144
+      ],
+      "id": "75e33f5f-147c-4a33-a21f-56fcdea71ca0",
+      "name": "Schedule Trigger"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "6f4ce089-8836-4af0-800e-ef67be3d534a",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "7d9223061e277f1f7e5d0e58659f8f2a1d122f9a873054bf80b012b31c7e1558"
+  },
+  "nodeGroups": [],
+  "id": "M456WzDr8RtDnv1T",
+  "tags": []
+}
